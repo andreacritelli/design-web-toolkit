@@ -14,3 +14,14 @@ const accordion = Fraccordion({
 })
 
 export default { accordion, Fraccordion }
+
+// Apertura di accordion specifici individuati con la classe 'accordion-open'
+var fields = document.getElementsByClassName('accordion-open')
+for (var i = 0; i < fields.length; i ++) {
+	fields[i].setAttribute('aria-selected','true')
+	fields[i].setAttribute('aria-expanded','true')
+	var idHeader = fields[i].getAttribute('id')
+	var idPanel = 'accordion-panel' + idHeader.replace('accordion-header','')
+	document.getElementById(idPanel).setAttribute('aria-hidden','false')
+	document.getElementById(idPanel).setAttribute('style','')
+}

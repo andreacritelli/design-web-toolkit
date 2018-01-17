@@ -1,12 +1,26 @@
 <div class="Accordion Accordion--default fr-accordion js-fr-accordion" id="accordion-1">
 
-	{% for i in range(0, 5) %}
+	<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header accordion-open" id="accordion-header-{{ 1 }}" >
+		<span class="Accordion-link">{{ __SHORT_TEXTS__[1] }}</span>
+	</h2>
+	<div id="accordion-panel-{{ 1 }}" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel" aria-hidden="false">
+    {% render '@prose--paragraph', { text: __TEXTS__[1] } %}
+	</div>
+
+	{% for i in range(1, 4) %}
 	<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header" id="accordion-header-{{ i }}" >
-		<span class="Accordion-link">TESTO AGGIUNTO {{ __SHORT_TEXTS__[i] }}</span>
+		<span class="Accordion-link">{{ __SHORT_TEXTS__[i] }}</span>
 	</h2>
 	<div id="accordion-panel-{{ i }}" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
     {% render '@prose--paragraph', { text: __TEXTS__[i] } %}
 	</div>
 	{% endfor %}
+
+	<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header accordion-open" id="accordion-header-{{ 5 }}" >
+		<span class="Accordion-link">{{ __SHORT_TEXTS__[5] }}</span>
+	</h2>
+	<div id="accordion-panel-{{ 5 }}" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel" aria-hidden="false">
+    {% render '@prose--paragraph', { text: __TEXTS__[5] } %}
+	</div>
 
 </div>
